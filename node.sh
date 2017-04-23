@@ -1,6 +1,8 @@
 #!/bin/bash
-TOKEN=325a02.a6c724d6a9ee5ce9
-MASTER_IP=139.59.20.105
+# Replace this with the token
+TOKEN=xxxxxx.yyyyyyyyyyyyyyyy
+
+MASTER_IP=xxx.xxx.xxx.xxx
 
 apt-get update && apt-get upgrade -y
 
