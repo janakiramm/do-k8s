@@ -21,7 +21,8 @@ doctl compute tag create k8s-node
 
 # Generate token and insert into the script files
 TOKEN=`python -c 'import random; print "%0x.%0x" % (random.SystemRandom().getrandbits(3*8), random.SystemRandom().getrandbits(8*8))'`
-
+sed -i.bak "s/^TOKEN=.*/TOKEN=${TOKEN}/" ./master.sh
+sed -i.bak "s/^TOKEN=.*/TOKEN=${TOKEN}/" ./node.sh
 
 # Create Master
 doctl compute droplet create master \
