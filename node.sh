@@ -1,5 +1,5 @@
 #!/bin/bash
-TOKEN=8c2350.f55343444a6ffc46
+TOKEN=325a02.a6c724d6a9ee5ce9
 MASTER_IP=139.59.20.105
 
 apt-get update && apt-get upgrade -y

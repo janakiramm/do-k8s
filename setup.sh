@@ -19,6 +19,10 @@ SSH_KEY=`doctl compute ssh-key get $SSH_ID --format FingerPrint --no-header`
 doctl compute tag create k8s-master
 doctl compute tag create k8s-node
 
+# Generate token and insert into the script files
+TOKEN=`python -c 'import random; print "%0x.%0x" % (random.SystemRandom().getrandbits(3*8), random.SystemRandom().getrandbits(8*8))'`
+
+
 # Create Master
 doctl compute droplet create master \
 	--region $REGION \
