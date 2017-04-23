@@ -1,5 +1,5 @@
 #!/bin/bash
-TOKEN=325a02.a6c724d6a9ee5ce9
+TOKEN=xxxxxx.yyyyyyyyyyyyyyyy
 apt-get update && apt-get upgrade -y 
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
