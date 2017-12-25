@@ -1,4 +1,6 @@
 #!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+
 # Replace this with the token 
 TOKEN=xxxxxx.yyyyyyyyyyyyyyyy
 
@@ -26,3 +28,5 @@ kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Docume
 kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml --namespace=kube-system
 kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml --namespace=kube-system
 
+# Install DigitalOcean monitoring agent
+curl -sSL https://agent.digitalocean.com/install.sh | sh
