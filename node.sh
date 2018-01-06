@@ -1,4 +1,6 @@
 #!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+
 # Replace this with the token
 TOKEN=xxxxxx.yyyyyyyyyyyyyyyy
 
@@ -17,4 +19,7 @@ apt-get update -y
 apt-get install -y docker.io
 apt-get install -y --allow-unauthenticated kubelet kubeadm kubectl kubernetes-cni
 
-kubeadm join --token $TOKEN $MASTER_IP:6443
+kubeadm join --token $TOKEN $MASTER_IP:6443 --discovery-token-unsafe-skip-ca-verification
+
+# Install DigitalOcean monitoring agent
+curl -sSL https://agent.digitalocean.com/install.sh | sh
